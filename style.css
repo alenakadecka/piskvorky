@@ -1,0 +1,38 @@
+.body {
+  background-image: linear-gradient(to bottom, #615dad, #ffc8da);
+
+}
+
+.velkykontajner {
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  background-color: #283e50;
+  border-radius: 5% 5% 0 0;
+ 
+}
+
+
+
+.textanadpis {
+  font-family: ;
+  color: #ffffff;
+  text-align: center;
+
+}
+
+.button {
+  height: ;
+  width: ;
+  text-align: center;
+}
+
+.zeleny
+.zeleny:hover 
+.modry 
+.modry:hover 
+
+a:hover {
+  cursor: pointer;
+
+}
