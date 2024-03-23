@@ -20,12 +20,11 @@ body {
 
 
 .velkykontajner {
-  width: 360px;
+  width: 350px;
   display: flex;
   flex-direction: column;
   background-color: #283e50;
   border-radius: 5% 5% 0 0;
-
 }
 
 img {
@@ -39,6 +38,7 @@ h1 {
 
 p {
   line-height: 1.4;
+  font-size: 17px;
 
 }
 
