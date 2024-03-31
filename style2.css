@@ -2,7 +2,7 @@ body {
   background-image: linear-gradient(180deg, #615dad, #ffc8da);
   background-size: 100% 100vh;
   background-repeat: repeat-y;
-  height: 100% 100%;
+  height: 100vh;
   max-width: 80vmin;
   margin: 0;
   display: flex;
@@ -14,8 +14,7 @@ body {
 .piskvorky_container {
   display: flex;
   flex-direction: row;
-  align-content: center;
-
+  alig
 }
 
 .items_container {
