@@ -25,7 +25,7 @@ body {
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  width: 360px;
+  width: 340px;
   margin-bottom: 20px;
 }
 
@@ -106,24 +106,20 @@ a:hover,
 
 .playground {
   display: flex;
-  max-height: 385px;
-  max-width: 385px;
+  --max-height: 360px;
+  --max-width: 360px;
 }
 
 
 .row {
   display: flex;
   flex-direction: column;
-
-
 }
 
 button {
-  aspect-ratio: 1/1;
-  min-height: 36px;
-  min-width: 36px;
-  max-width: 100%;
-  max-height: 100%;
+  aspect-ratio: 1 / 1;
+  height: calc(var(--max-height) / 10 - 2px);
+  width: calc(var(--max-width) / 10 - 2px);
   border: 2px solid #000000;
   margin: 0;
   padding: 0;
