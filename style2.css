@@ -133,3 +133,8 @@ button:hover {
 button:focus {
   background-color: #9b739b;
 }
+
+.btn-symbol--selected {
+  color: red;
+  background-color: yellow;
+}
