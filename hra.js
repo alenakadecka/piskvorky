@@ -1,3 +1,5 @@
+import { findWinner } from 'https://unpkg.com/piskvorky@0.1.4';
+
 let naTahu = 'Alena';
 let currentPlayer = 'circle';
 
@@ -18,6 +20,17 @@ const selectSymbol = (event) => {
   event.target.disabled = true;
 };
 
-// document.querySelectorAll('td:nth-child(5) button');
+const selectSymbol2 = document.querySelectorAll('.btn');
+selectSymbol2.forEach(addEventListener('click', selectSymbol));
 
-document.querySelectorAll.forEach.addEventListener('click', (event) => {});
+/////////////////////////////////6 tahov/////////////////////////////////////////
+
+let tahyHracov = [];
+
+selectSymbol{
+if (selectSymbol2.length < 6) {
+ tahyHracov.push(selectSymbol2);
+}
+}
+
+if 
