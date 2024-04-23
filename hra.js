@@ -18,19 +18,42 @@ const selectSymbol = (event) => {
     symbol.src = 'img/circle.svg';
   }
   event.target.disabled = true;
+
+  mameVitaza();
 };
 
 const selectSymbol2 = document.querySelectorAll('.btn');
-selectSymbol2.forEach(addEventListener('click', selectSymbol));
+selectSymbol2.forEach((btn) => btn.addEventListener('click', selectSymbol));
 
-/////////////////////////////////6 tahov/////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////
+const symbol = document.querySelectorAll('.board__field');
+const hernePolicko = [...symbol].map((item) => {
+  if (item.classList.contains('board__field--circle')) {
+    return 'o';
+  } else if (item.classList.contains('board__field--cross')) {
+    return 'x';
+  } else {
+    return '_';
+  }
+});
 
-let tahyHracov = [];
+const mameVitaza = () => {
+  const symbol = document.querySelectorAll('.board__field');
+  const hernePolicko = [...symbol].map((item) => {
+    if (item.classList.contains('board__field--circle')) {
+      return 'o';
+    } else if (item.classList.contains('board__field--cross')) {
+      return 'x';
+    } else {
+      return '_';
+    }
+  });
 
-selectSymbol{
-if (selectSymbol2.length < 6) {
- tahyHracov.push(selectSymbol2);
-}
-}
-
-if 
+  const winner = findWinner(hernePolicko);
+  if (winner === 'o' || winner === 'x') {
+    alert(`Vyhral hráč so symbolom "${winner.toUpperCase()}"!`);
+    location.reload();
+  } else if (winner === 'tie') {
+    alert('Hra sa skončila nerozhodne.');
+  }
+};
