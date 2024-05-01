@@ -3,7 +3,7 @@ import { findWinner } from 'https://unpkg.com/piskvorky@0.1.4';
 let naTahu = 'Alena';
 let currentPlayer = 'circle';
 
-const selectSymbol = (event) => {
+const selectSymbol = async (event) => {
   const btn = event.target;
   btn.classList.add('board__field');
   const symbol = document.querySelector('.circle_button');
@@ -51,10 +51,15 @@ const mameVitaza = async () => {
 
   const winner = findWinner(hernePolicko);
   if (winner === 'o' || winner === 'x') {
-    alert(`Vyhral hráč so symbolom "${winner.toUpperCase()}"!`);
-    location.reload();
+    setTimeout(() => {
+      alert(`Vyhral hráč so symbolom "${winner.toUpperCase()}"!`);
+      location.reload();
+    }, 550);
   } else if (winner === 'tie') {
-    alert('Hra sa skončila nerozhodne.');
+    setTimeout(() => {
+      alert('Hra sa skončila nerozhodne.');
+      location.reload();
+    }, 550);
   }
 
   if (winner === null && currentPlayer === 'cross') {
