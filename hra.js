@@ -37,7 +37,7 @@ const hernePolicko = [...symbol].map((item) => {
   }
 });
 
-const mameVitaza = () => {
+const mameVitaza = async () => {
   const symbol = document.querySelectorAll('.board__field');
   const hernePolicko = [...symbol].map((item) => {
     if (item.classList.contains('board__field--circle')) {
@@ -55,5 +55,25 @@ const mameVitaza = () => {
     location.reload();
   } else if (winner === 'tie') {
     alert('Hra sa skončila nerozhodne.');
+  }
+
+  if (winner === null && currentPlayer === 'cross') {
+    const response = await fetch(
+      'https://piskvorky.czechitas-podklady.cz/api/suggest-next-move',
+      {
+        method: 'POST',
+        headers: {
+          'Content-type': 'application/json',
+        },
+        body: JSON.stringify({
+          board: symbol,
+          player: 'x',
+        }),
+      },
+    );
+    const data = await response.json();
+    const { x, y } = data.position;
+    const index = symbol[x + y * 10];
+    index.click();
   }
 };
