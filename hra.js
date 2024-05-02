@@ -47,7 +47,6 @@ const mameVitaza = async () => {
       return '_';
     }
   });
-  console.log(1);
 
   const winner = findWinner(hernePolicko);
   if (winner === 'o' || winner === 'x') {
@@ -61,11 +60,6 @@ const mameVitaza = async () => {
       location.reload();
     }, 550);
   }
-  console.log(2);
-  console.log(winner);
-  console.log(currentPlayer);
-
-  // nie je splnene, ye hra kolecko, ze sa neprepnu////
 
   if (winner === null && currentPlayer === 'cross') {
     console.log(4);
