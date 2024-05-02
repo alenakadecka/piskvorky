@@ -1,6 +1,5 @@
 import { findWinner } from 'https://unpkg.com/piskvorky@0.1.4';
 
-let naTahu = 'Alena';
 let currentPlayer = 'circle';
 
 const selectSymbol = async (event) => {
@@ -8,13 +7,13 @@ const selectSymbol = async (event) => {
   btn.classList.add('board__field');
   const symbol = document.querySelector('.circle_button');
 
-  if (naTahu === 'Alena') {
-    naTahu = 'Lama';
+  if (currentPlayer === 'circle') {
+    currentPlayer = 'cross';
     btn.classList.add('board__field--circle');
     symbol.src = 'img/cross.svg';
   } else {
     btn.classList.add('board__field--cross');
-    naTahu = 'Alena';
+    currentPlayer = 'circle';
     symbol.src = 'img/circle.svg';
   }
   event.target.disabled = true;
@@ -48,6 +47,7 @@ const mameVitaza = async () => {
       return '_';
     }
   });
+  console.log(1);
 
   const winner = findWinner(hernePolicko);
   if (winner === 'o' || winner === 'x') {
@@ -61,8 +61,14 @@ const mameVitaza = async () => {
       location.reload();
     }, 550);
   }
+  console.log(2);
+  console.log(winner);
+  console.log(currentPlayer);
+
+  // nie je splnene, ye hra kolecko, ze sa neprepnu////
 
   if (winner === null && currentPlayer === 'cross') {
+    console.log(4);
     const response = await fetch(
       'https://piskvorky.czechitas-podklady.cz/api/suggest-next-move',
       {
@@ -71,7 +77,7 @@ const mameVitaza = async () => {
           'Content-type': 'application/json',
         },
         body: JSON.stringify({
-          board: symbol,
+          board: hernePolicko,
           player: 'x',
         }),
       },
